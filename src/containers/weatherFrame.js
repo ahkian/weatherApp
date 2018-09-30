@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { key } from '../apiKey.js';
 
 class WeatherFrame extends Component {
   locationGet = () => {
-    fetch(`api.openweathermap.org/data/2.5/weather?q=brooklyn`
-    // {
-    //   mode: 'no-cors',
-    //   headers:{
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   }
-    // }
-  )
-    .then(res => res.json())
+    fetch(`api.openweathermap.org/data/2.5/weather?id=5128638&APPID=${key}`)
+    .then(res => JSON.parse(res))
     .then(json => console.log(json))
   }
 
