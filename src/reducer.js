@@ -1,7 +1,8 @@
 import{ ADD_LOCATION } from './types.js';
 
 const initState = {
-  locations: []
+  locations: [],
+  currLocation: null
 }
 
 export default function reducer(state = initState, action){

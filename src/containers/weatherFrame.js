@@ -6,3 +6,11 @@ export default class WeatherFrame extends Component {
     return()
   }
 }
+
+function mapStateToProps(state){
+  console.log(state)
+  return{
+    locations: state.locations
+  }
+}
+export default connect(mapStateToProps)(App);
