@@ -23,10 +23,8 @@ class WeatherFrame extends Component {
     fetch("http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=8d2e0f9140b10ca988b3cff5f9dfd658")
 	   .then(res => res.json())
 	   .then(json =>{
-		     this.setState = {weather: json},
-         console.log(json)
-       }
-     )
+		     this.setState({weather: json}, console.log(this.state))
+       })
       }
 
   render(){
