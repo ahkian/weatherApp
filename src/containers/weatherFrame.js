@@ -7,7 +7,7 @@ class WeatherFrame extends Component {
   constructor(){
     super()
     this.state = {
-      weather: {}
+      weather: null
     }
   }
 
@@ -22,18 +22,18 @@ class WeatherFrame extends Component {
   locationGet = () => {
     fetch("http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=8d2e0f9140b10ca988b3cff5f9dfd658")
 	   .then(res => res.json())
-	   .then(json => {
-		     this.setState = {weather: json.weather[0]}
-	      })
+	   .then(json =>{
+		     this.setState = {weather: json},
+         console.log(json)
+       }
+     )
       }
 
   render(){
     return(
       <React.Fragment>
         <button onClick={this.locationGet}>Get Weather</button>
-        <p>{this.state.weather.map(el => {
-            return <p>{el}</p>
-          })}</p>
+        {this.state.weather !== null ? <div><p>{this.state.weather.main.temp}</p></div>:<p>Fetch the weather</p>}
       </React.Fragment>
     )
   }
