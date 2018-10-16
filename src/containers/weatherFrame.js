@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { key } from '../apiKey.js';
 import '../weather.css';
 import WeatherDisplay from '../components/weatherDisplay.js';
-import { LOAD_WEATHER } from '../types.js'
+
 
 class WeatherFrame extends Component {
   constructor(){

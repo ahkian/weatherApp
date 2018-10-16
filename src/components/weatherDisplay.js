@@ -21,7 +21,7 @@ class WeatherDisplay extends Component {
     return(
       <React.Fragment>
         <button onClick={this.locationGet}>Get Weather</button>
-        {this.props.weather !== null ? <div><p>Temperature: {Math.round((this.props.weather.main.temp) * (9/5) - 459.76)}º Farenheit</p></div>:<p>Fetch the weather</p>}
+        {this.props.weather !== null ? <div><p>{this.props.weather.weather[0].main}</p><p>Temperature: {Math.round((this.props.weather.main.temp) * (9/5) - 459.76)}º Farenheit</p><p>Wind Speed: {this.props.weather.wind.speed} mph</p></div>:<p>Fetch the weather</p>}
       </React.Fragment>
     )
   }
