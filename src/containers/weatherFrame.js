@@ -21,22 +21,12 @@ class WeatherFrame extends Component {
               }
             }
 
-  locationGet = () => {
-    fetch("http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=8d2e0f9140b10ca988b3cff5f9dfd658")
-	   .then(res => res.json())
-	   .then(json =>{
-		     const action = {
-           type: LOAD_WEATHER,
-           payload: json
-         }
-         state.dispatch(action)
-       })
-      }
+
 
   render(){
     return(
       <React.Fragment>
-        <WeatherDisplay weatherGet={this.locationGet}/>
+        <WeatherDisplay/>
       </React.Fragment>
     )
   }
