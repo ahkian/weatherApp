@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ADD_LOCATION } from '../types.js'
 
@@ -22,14 +22,14 @@ class LocationBox extends Component {
       type: ADD_LOCATION,
       payload: this.state.textValue
     }
-    this.props.dispatch
+    this.props.dispatch(action)
   }
 
   render(){
     return(
       <React.Fragment>
-        <input type='text' value={this.state.textValue} onChange={this.changeHandler}></input>
-        <button onClick={}>Submit</button>
+        <input placeholder='Enter Location Name' type='text' value={this.state.textValue} onChange={this.changeHandler}></input>
+        <button onClick={this.submitHandler}>Submit</button>
       </React.Fragment>
     )
   }
