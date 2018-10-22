@@ -18,10 +18,24 @@ class LocationBox extends Component {
     })
   }
 
+  cityFind = (city) => {
+    var cityID = null
+    for (let i = 0; i < CITIES.length; i++){
+      if (CITIES[i].name === city){
+        cityID = CITIES[i].id
+      }
+    }
+    return (cityID !== null ? cityID : "City not Found")
+  }
+
   submitHandler = () =>{
+    let cityId = this.cityFind(this.state.textValue)
     let action = {
       type: ADD_LOCATION,
-      payload: this.state.textValue
+      payload: {
+        name: this.state.textValue,
+        id: cityId
+      }
     }
     this.props.dispatch(action)
   }
