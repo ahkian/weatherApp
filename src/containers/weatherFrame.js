@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { key } from '../apiKey.js';
 import '../weather.css';
 import WeatherDisplay from '../components/weatherDisplay.js';
+import LocationBox from '../components/locationTextBox.js'
 
 
 class WeatherFrame extends Component {
@@ -26,7 +27,8 @@ class WeatherFrame extends Component {
   render(){
     return(
       <React.Fragment>
-        <WeatherDisplay/>
+        <LocationBox />
+        <WeatherDisplay />
       </React.Fragment>
     )
   }
