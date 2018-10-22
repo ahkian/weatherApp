@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ADD_LOCATION } from '../types.js'
+import { ADD_LOCATION } from '../types.js';
+import { CITIES } from '../cityList.js';
 
 class LocationBox extends Component {
 
