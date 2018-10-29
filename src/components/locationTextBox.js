@@ -18,33 +18,37 @@ class LocationBox extends Component {
     })
   }
 
-  cityFind = (city) => {
-    var cityID = null
-    for (let i = 0; i < CITIES.length; i++){
-      if (CITIES[i].name === city){
-        cityID = CITIES[i].id
-      }
-    }
-    return (cityID !== null ? cityID : "City not Found")
-  }
+  // cityFind = (city) => {
+  //   var cityID = null
+  //   for (let i = 0; i < CITIES.length; i++){
+  //     if (CITIES[i].name === city){
+  //       cityID = CITIES[i].id
+  //     }
+  //   }
+  //   return (cityID !== null ? cityID : "City not Found")
+  // }
 
-  submitHandler = () =>{
-    let cityId = this.cityFind(this.state.textValue)
-    let action = {
-      type: ADD_LOCATION,
-      payload: {
-        name: this.state.textValue,
-        id: cityId
-      }
-    }
-    this.props.dispatch(action)
-  }
+  // submitHandler = () =>{
+  //   let cityId = this.cityFind(this.state.textValue)
+  //   let action = {
+  //     type: ADD_LOCATION,
+  //     payload: {
+  //       name: this.state.textValue,
+  //       id: 707860
+  //     }
+  //   }
+  //   if (cityId !== "City not Found") {
+  //     this.props.dispatch(action)
+  //   } else {
+  //     window.alert("City not found")
+  //   }
+  // }
 
   render(){
     return(
       <React.Fragment>
         <input placeholder='Enter Location Name' type='text' value={this.state.textValue} onChange={this.changeHandler}></input>
-        <button onClick={this.submitHandler}>Submit</button>
+        <button onClick={() => {window.alert('clicked!')}}>Submit</button>
       </React.Fragment>
     )
   }
